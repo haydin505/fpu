@@ -269,6 +269,7 @@ namespace FP300Service
         public const String CREATE_SALE_DB = "CREATE SALE DB";
         public const String CLOSE_FM = "CLOSE FM";
         public const String FACTORY_SETTINGS = "FACTORY SETTINGS";
+        public const String CLEAR_ERROR = "CLEAR ERROR"
         public const String PRINT_LOGS = "PRINT LOGS";
         public const String FORMAT_DAILY_MEMORY = "FORMAT DAILY MEMORY";
         public const string INITIALIZE_EJ = "INITIALIZE EJ";
@@ -712,6 +713,7 @@ namespace FP300Service
         public const String CREATE_SALE_DB = "SATIŞ DB OLUŞTUR";
         public const String CLOSE_FM = "FM SONLANDIR";
         public const String FACTORY_SETTINGS = "FABRIKA AYARLARI";
+        public const String CLEAR_ERROR = "HATA SİLME";
         public const String PRINT_LOGS = "LOG YAZDIR";
         public const String FORMAT_DAILY_MEMORY = "GÜNLÜK BELLEK SIFIRLA";
         public const string INITIALIZE_EJ = "EJ FORMATLA";

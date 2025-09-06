@@ -46,7 +46,8 @@ namespace FP300Service.UserControls
             this.btnStartFMTest.Text = FormMessage.START_FM_TEST;
             this.btnCreateDB.Text = FormMessage.CREATE_SALE_DB;
             this.btnCloseFM.Text = FormMessage.CLOSE_FM;
-            this.btnFatorySettings.Text = FormMessage.FACTORY_SETTINGS;
+            this.btnFactorySettings.Text = FormMessage.FACTORY_SETTINGS;
+            this.btnClearError.Text = FormMessage.CLEAR_ERROR;
             this.btnFormatDailyMem.Text = FormMessage.FORMAT_DAILY_MEMORY;
             this.btnEJInit.Text = FormMessage.INITIALIZE_EJ;
             this.btnUpdateFirmware.Text = FormMessage.UPDATE_FIRMWARE;
@@ -85,7 +86,8 @@ namespace FP300Service.UserControls
         private Button btnStartFMTest;
         private Button btnCreateDB;
         private Button btnCloseFM;
-        private Button btnFatorySettings;
+        private Button btnFactorySettings;
+        private Button btnClearError;
         private Button btnPrintLogs;
         private Button btnFormatDailyMem;
         private Button btnEJInit;
@@ -183,7 +185,7 @@ namespace FP300Service.UserControls
             this.btnStartFMTest = new System.Windows.Forms.Button();
             this.btnCreateDB = new System.Windows.Forms.Button();
             this.btnCloseFM = new System.Windows.Forms.Button();
-            this.btnFatorySettings = new System.Windows.Forms.Button();
+            this.btnFactorySettings = new System.Windows.Forms.Button();
             this.btnFormatDailyMem = new System.Windows.Forms.Button();
             this.btnEJInit = new System.Windows.Forms.Button();
             this.tabSRVTest = new System.Windows.Forms.TabPage();
@@ -777,17 +779,29 @@ namespace FP300Service.UserControls
             this.btnCloseFM.UseVisualStyleBackColor = true;
             this.btnCloseFM.Click += new System.EventHandler(this.btnCloseFM_Click);
             // 
-            // btnFatorySettings
+            // btnFactorySettings
             // 
-            this.btnFatorySettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFatorySettings.Location = new System.Drawing.Point(2, 222);
-            this.btnFatorySettings.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFatorySettings.Name = "btnFatorySettings";
-            this.btnFatorySettings.Size = new System.Drawing.Size(148, 56);
-            this.btnFatorySettings.TabIndex = 7;
-            this.btnFatorySettings.Text = "FACTORY SETTINGS";
-            this.btnFatorySettings.UseVisualStyleBackColor = true;
-            this.btnFatorySettings.Click += new System.EventHandler(this.btnFatorySettings_Click);
+            this.btnFactorySettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFactorySettings.Location = new System.Drawing.Point(2, 222);
+            this.btnFactorySettings.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFactorySettings.Name = "btnFactorySettings";
+            this.btnFactorySettings.Size = new System.Drawing.Size(148, 56);
+            this.btnFactorySettings.TabIndex = 7;
+            this.btnFactorySettings.Text = "FACTORY SETTINGS";
+            this.btnFactorySettings.UseVisualStyleBackColor = true;
+            this.btnFactorySettings.Click += new System.EventHandler(this.btnFactorySettings_Click);
+            //
+            // btnClearError
+            //
+            this.btnClearError = new System.Windows.Forms.Button();
+            this.btnClearError.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClearError.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearError.Name = "btnClearError";
+            this.btnClearError.TabIndex = 12;
+            this.btnClearError.Text = "CLEAR ERROR";
+            this.btnClearError.UseVisualStyleBackColor = true;
+            this.btnClearError.Click += new System.EventHandler(this.btnClearError_Click);
+            this.tableLayoutPanel2.Controls.Add(this.btnClearError, 0, 6);
             // 
             // btnFormatDailyMem
             // 
@@ -935,7 +949,7 @@ namespace FP300Service.UserControls
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.btnCloseFM, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnFatorySettings, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.btnFactorySettings, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.btnEJInit, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.btnStartFMTest, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnCreateDB, 0, 1);
@@ -943,13 +957,14 @@ namespace FP300Service.UserControls
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 15);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowCount = 7;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(152, 280);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
@@ -985,7 +1000,6 @@ namespace FP300Service.UserControls
             this.gbxTestGmp.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -1129,7 +1143,7 @@ namespace FP300Service.UserControls
             }
         }
 
-        private void btnFatorySettings_Click(object sender, EventArgs e)
+        private void btnFactorySettings_Click(object sender, EventArgs e)
         {
             try
             {            
@@ -1277,6 +1291,19 @@ namespace FP300Service.UserControls
             catch
             {
 
+            }
+        }
+        private void btnClearError_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bridge.Log("KOMUT    : CLEAR_ERROR");
+                CPResponse response = new CPResponse(bridge.Printer.ClearError());
+                ParseServiceResponse(response);
+            }
+            catch (Exception ex)
+            {
+                bridge.Log(FormMessage.OPERATION_FAILS + ": " + ex.Message);
             }
         }
 
